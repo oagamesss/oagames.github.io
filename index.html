@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Puff Daddy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -14,72 +14,71 @@
     }
 
     body {
-      background-color: #ffffff;
-    }
-
-    header {
-      background-color: white;
-      padding: 1rem 2rem;
+      background-color: #000;
+      color: #fff;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .logo {
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: #007BFF;
-      display: flex;
-      align-items: center;
-    }
-
-    .logo span {
-      color: #000;
-      font-weight: 600;
-      margin-left: 5px;
-    }
-
-    .main-section {
-      background-color: #2196F3;
-      color: white;
+      padding: 60px 30px 40px;
+      min-height: 100vh;
       text-align: center;
-      padding: 4rem 2rem;
     }
 
-    .main-section h1 {
-      font-size: 2.5rem;
+    .title {
+      font-size: 2rem;
       font-weight: 800;
-      margin-bottom: 1rem;
+      margin-bottom: 10px;
     }
 
-    .main-section p {
+    .subtitle {
       font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 2rem;
+      color: #ccc;
+      margin-bottom: 30px;
+      line-height: 1.6;
     }
 
-    .download-buttons {
+    .cta-button {
+      background-color: #fff;
+      color: #000;
+      font-weight: 700;
+      padding: 15px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .store-buttons {
       display: flex;
-      justify-content: center;
+      flex-direction: row;
       gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
 
-    .download-buttons a img {
+    .store-buttons a img {
       height: 50px;
     }
 
-    @media (max-width: 500px) {
-      .main-section h1 {
-        font-size: 2rem;
+    @media (max-width: 480px) {
+      .title {
+        font-size: 1.7rem;
       }
 
-      .download-buttons {
+      .subtitle {
+        font-size: 0.95rem;
+      }
+
+      .store-buttons {
         flex-direction: column;
-        align-items: center;
+        gap: 10px;
       }
 
-      .download-buttons a img {
+      .store-buttons a img {
         height: 45px;
       }
     }
@@ -87,22 +86,17 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="https://img.icons8.com/ios-filled/50/000000/electronic-cigarette.png" alt="logo" style="height: 24px; margin-right: 8px;">
-      Puff <span>Daddy</span>
-    </div>
-  </header>
+  <h1 class="title">Welcome to PuffDaddy</h1>
+  <p class="subtitle">
+    Starting today, let’s quit vaping and take back control of your life again.
+  </p>
 
-  <section class="main-section">
-    <h1>The #1 Quit Vaping App</h1>
-    <p>Puff Count is a free application dedicated to help you quit vaping.<br>
-    The app keeps track of your puffs and nicotine intake to make quitting easier.</p>
-    <div class="download-buttons">
-      <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a>
-      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
-    </div>
-  </section>
+  <a href="#" class="cta-button">Take Back Control</a>
+
+  <div class="store-buttons">
+    <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" /></a>
+    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" /></a>
+  </div>
 
 </body>
 </html>
