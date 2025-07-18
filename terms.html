@@ -13,6 +13,7 @@
     margin: auto;
     padding: 2rem 1.5rem;
     line-height: 1.7;
+    padding-top: 70px;
   }
 
   h1 {
@@ -80,16 +81,113 @@
   a:hover {
     color: #fff;
   }
-</style>
+  .navbar {
+    width: 100%;
+    background: #111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .navbar-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 60px;
+  }
+  .navbar-logo {
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  .navbar-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .navbar-links a:hover {
+    color: #00e0d6;
+  }
+  .navbar-toggle {
+    display: none;
+  }
+  .navbar-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: center;
+  }
+  .navbar-icon span {
+    height: 4px;
+    width: 100%;
+    background: #fff;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  @media (max-width: 700px) {
+    .navbar-container {
+      padding: 0 10px;
+    }
+    .navbar-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: #111;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+    }
+    .navbar-links a {
+      padding: 15px 0;
+      width: 100%;
+      border-top: 1px solid #222;
+    }
+    .navbar-toggle:checked ~ .navbar-links {
+      max-height: 300px;
+      border-bottom: 1px solid #222;
+    }
+    .navbar-icon {
+      display: flex;
+    }
+  }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Terms of Use</h1>
-    <nav>
-      <a href="/privacypolicy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Use</a>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">PuffDaddy</a>
+      <input type="checkbox" id="navbar-toggle" class="navbar-toggle" />
+      <label for="navbar-toggle" class="navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
 
   <main>
     <h2>AGREEMENT TO TERMS</h2>

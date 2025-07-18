@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Puff Daddy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      padding: 60px 30px 40px;
+      padding-top: 70px;
+    }
+    .navbar {
+      width: 100%;
+      background: #111;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .navbar-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 60px;
+    }
+    .navbar-logo {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.3rem;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .navbar-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .navbar-links a:hover {
+      color: #00e0d6;
+    }
+    .navbar-toggle {
+      display: none;
+    }
+    .navbar-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      justify-content: center;
+    }
+    .navbar-icon span {
+      height: 4px;
+      width: 100%;
+      background: #fff;
+      margin: 3px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    @media (max-width: 700px) {
+      .navbar-container {
+        padding: 0 10px;
+      }
+      .navbar-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+      }
+      .navbar-links a {
+        padding: 15px 0;
+        width: 100%;
+        border-top: 1px solid #222;
+      }
+      .navbar-toggle:checked ~ .navbar-links {
+        max-height: 300px;
+        border-bottom: 1px solid #222;
+      }
+      .navbar-icon {
+        display: flex;
+      }
+    }
+    .contact-container {
+      background: #181818;
+      border-radius: 16px;
+      padding: 32px 24px;
+      max-width: 400px;
+      width: 100%;
+      margin: 40px auto 0;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+    }
+    .contact-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      background: #222;
+      color: #fff;
+      resize: none;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 2px solid #00e0d6;
+    }
+    .contact-form button {
+      background-color: #fff;
+      color: #000;
+      font-weight: 700;
+      padding: 12px 0;
+      border-radius: 30px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: #00e0d6;
+      color: #fff;
+    }
+    @media (max-width: 480px) {
+      .contact-container {
+        padding: 20px 8px;
+      }
+      .contact-title {
+        font-size: 1.2rem;
+      }
+    }
+    .popup-modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+    .popup-content {
+      background: #222;
+      color: #fff;
+      padding: 32px 24px;
+      border-radius: 12px;
+      text-align: center;
+      min-width: 200px;
+      position: relative;
+    }
+    .close-popup {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">PuffDaddy</a>
+      <input type="checkbox" id="navbar-toggle" class="navbar-toggle" />
+      <label for="navbar-toggle" class="navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <div class="contact-container">
+    <div class="contact-title">Contact Us</div>
+    <form class="contact-form" id="contactForm">
+      <input type="email" name="email" id="email" placeholder="Your email address" required />
+      <textarea name="message" id="message" rows="5" placeholder="Your message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+  <div id="popup" class="popup-modal" style="display:none;">
+    <div class="popup-content">
+      <span id="closePopup" class="close-popup">&times;</span>
+      <p>Email sent!</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+      var mailtoLink = 'mailto:oisin@oagames.xyz?subject=Contact%20from%20' + encodeURIComponent(email) + '&body=' + encodeURIComponent(message);
+      window.open(mailtoLink, '_blank');
+      document.getElementById('popup').style.display = 'flex';
+      document.getElementById('contactForm').reset();
+    });
+    document.getElementById('closePopup').onclick = function() {
+      document.getElementById('popup').style.display = 'none';
+    };
+    window.onclick = function(event) {
+      var popup = document.getElementById('popup');
+      if (event.target == popup) {
+        popup.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html> 
