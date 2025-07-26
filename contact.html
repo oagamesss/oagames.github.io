@@ -227,6 +227,18 @@
     </div>
   </div>
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const type = urlParams.get('type');
+    
+    if (type === 'help') {
+        // Pre-fill subject or show help-specific content
+        document.getElementById('subject').value = 'PuffDaddy Help Request';
+    } else if (type === 'feedback') {
+        // Pre-fill subject or show feedback-specific content
+        document.getElementById('subject').value = 'PuffDaddy Feedback';
+    }
+
+    
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       var email = document.getElementById('email').value;
